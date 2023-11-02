@@ -1,4 +1,4 @@
-package ejercicio03;
+package condicionales;
 
 import java.util.Scanner;
 
@@ -57,15 +57,19 @@ public class Ejercicio03 {
 			System.out.println("No hay animales");
 		} else {
 			if (cantidadComida >= animalesComen) {
+				
 				// Hay comida
 				System.out.println("Hay suficiente comida");
+			
 			} else {
+				
 				// No hay comida, pero tampoco dinero, por lo que se dividira la comida entre nº
 				// de animales
 				System.out.println("No hay suficiente comida, por lo que se dividira la comida");
 				racion = cantidadComida / numeroAnimales;
 				System.out.println("Teniendo un total de " + numeroAnimales + " animales, habra que usar " + racion
 						+ "kg de comida por cada animal.");
+			
 			} // Fin If 1.1
 		} // Fin If 1
 

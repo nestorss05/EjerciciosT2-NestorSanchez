@@ -1,4 +1,4 @@
-package ejercicio01;
+package condicionales;
 
 import java.util.Scanner;
 
