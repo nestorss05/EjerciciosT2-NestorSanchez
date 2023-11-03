@@ -53,8 +53,8 @@ public class Ejercicio03 {
 		// If 1: Si el nº de animales es 0 o menor, el programa no continuara
 		// If 1.1: De lo contrario, se revisara si la cantidad de comida es mayor o
 		// igual a la cantidad que comen entre todos.
-		if (numeroAnimales <= 0) {
-			System.out.println("No hay animales");
+		if (cantidadComida <= 0 || numeroAnimales <= 0) {
+			System.out.println("ERROR: El numero de animales y/o la cantidad de comida 0");
 		} else {
 			if (cantidadComida >= animalesComen) {
 				
