@@ -1,5 +1,6 @@
 package bucles;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -9,7 +10,7 @@ import java.util.Scanner;
  * 
  * numero: 33 | Esperaba: 11 numeros primos | Resultado: 11 numeros primos
  * 
- * numero: -5 | Esperaba: Numero menor que 1 | Resultado: Numero menor que 1
+ * numero: -5 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
  * 
  */
 
@@ -18,7 +19,7 @@ public class Ejercicio02 {
 	public static void main(String[] args) {
 
 		// numero: numero introducido por el usuario
-		int numero;
+		int numero = 0;
 
 		// esPrimo: un contador de numeros primos que se va sumando con cuantos mas
 		// numeros primos hayan
@@ -31,37 +32,40 @@ public class Ejercicio02 {
 		Scanner sc = new Scanner(System.in);
 
 		// Pide al usuario un numero y guardalo en la variable numero
-		System.out.println("Inserta un numero");
-		numero = sc.nextInt();
+		do {
 
-		// If: si el numero es menor que 1, el programa no continuara
-		if (numero < 1) {
-			System.out.println("El numero introducido es menor que 1, por lo que no hay numero que comparar.");
-		} else {
-			// For I: I sera 1, debera ser menor que el numero, y se ira sumando 1 en cada
-			// iteracion
+			try {
+				System.out.println("Inserta un numero");
+				numero = sc.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Dato introducido incorrecto");
+				sc.nextLine();
+			}
 
-			// greenFlags pasara a ser 0, se ejecutara For J y se revisara si tienes 2 o
-			// menos green flags (o si el numero no es 1), donde se contara el numero como
-			// primo
-			for (int i = 1; i <= numero; i++) {
-				greenFlags = 0;
-				// For J: J sera 1, debera ser menor que I, y se ira sumando 1 en cada
-				// iteracion. Si el resto de i entre j es 0, se le asignara una greenFlag
-				for (int j = 1; j <= i; j++) {
-					if (i % j == 0) {
-						greenFlags++;
-					} // Fin If1 J
-				} // Fin For J
-				if (greenFlags <= 2 && i != 1) {
-					esPrimo++;
-				} // Fin If I
-			} // Fin For I
+		} while (numero < 1);
 
-			// Se le informara al usuario cuantos numeros primos hay
-			System.out.println("Entre 1 y " + numero + ", hay " + esPrimo + " numeros primos");
+		// For I: I sera 1, debera ser menor que el numero, y se ira sumando 1 en cada
+		// iteracion
 
-		} // Fin If
+		// greenFlags pasara a ser 0, se ejecutara For J y se revisara si tienes 2 o
+		// menos green flags (o si el numero no es 1), donde se contara el numero como
+		// primo
+		for (int i = 1; i <= numero; i++) {
+			greenFlags = 0;
+			// For J: J sera 1, debera ser menor que I, y se ira sumando 1 en cada
+			// iteracion. Si el resto de i entre j es 0, se le asignara una greenFlag
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0) {
+					greenFlags++;
+				} // Fin If1 J
+			} // Fin For J
+			if (greenFlags <= 2 && i != 1) {
+				esPrimo++;
+			} // Fin If I
+		} // Fin For I
+
+		// Se le informara al usuario cuantos numeros primos hay
+		System.out.println("Entre 1 y " + numero + ", hay " + esPrimo + " numeros primos");
 
 		// Cierra el Scanner
 		sc.close();
