@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * numero: 33 | Esperaba: 11 numeros primos | Resultado: 11 numeros primos
  * 
- * numero: -5 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * numero: -5 | Esperaba: Menor que 1 | Resultado: Menor que 1
  * 
  */
 
@@ -37,6 +37,9 @@ public class Ejercicio02 {
 			try {
 				System.out.println("Inserta un numero");
 				numero = sc.nextInt();
+				if (numero < 1) {
+					System.out.println("Dato introducido menor que 1");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido incorrecto");
 				sc.nextLine();

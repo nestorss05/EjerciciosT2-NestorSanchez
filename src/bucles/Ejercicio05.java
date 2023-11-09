@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * numeroA: 3 | numeroB: 4 | Esperaba: MCM = 12 | Resultado: MCM = 12
  * 
- * numeroA: -8 | numeroB: 4 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * numeroA: -8 | numeroB: 4 | Esperaba: Menor que 1 | Resultado: Menor que 1
  * 
  */
 
@@ -19,10 +19,10 @@ public class Ejercicio05 {
 	public static void main(String[] args) {
 
 		// numeroA: primer numero pedido al usuario
-		int numeroA=0;
+		int numeroA = 0;
 
 		// numeroB: segundo numero pedido al usuario
-		int numeroB=0;
+		int numeroB = 0;
 
 		// numeroMayor: el numero mas grande entre numeroA y numeroB
 		int numeroMayor;
@@ -39,6 +39,9 @@ public class Ejercicio05 {
 			try {
 				System.out.println("Inserta un numero");
 				numeroA = sc.nextInt();
+				if (numeroA < 1) {
+					System.out.println("Dato introducido menor que 1");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido invalido");
 				sc.nextLine();

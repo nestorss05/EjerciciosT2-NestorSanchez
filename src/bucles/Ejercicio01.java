@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * horas: 2, minutos: 29, segundos: 34, incremento: 26 | Esperaba: 2:30:00 | Resultado: 2:30:0
  * 
- * horas: 66, minutos: 66, segundos: 66, incremento: 66 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * horas: 66, minutos: 66, segundos: 66, incremento: 66 | Esperaba: Dato fuera del rango | Resultado: Dato fuera del rango
  * 
  */
 
@@ -40,6 +40,9 @@ public class Ejercicio01 {
 			try {
 				System.out.println("Inserta la hora (0 a 23)");
 				horas = sc.nextInt();
+				if (horas < 0 || horas > 23) {
+					System.out.println("Dato introducido fuera del rango");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido incorrecto");
 				sc.nextLine();
@@ -51,6 +54,9 @@ public class Ejercicio01 {
 			try {
 				System.out.println("Inserta los minutos (0 a 59)");
 				minutos = sc.nextInt();
+				if (minutos < 0 || minutos > 59) {
+					System.out.println("Dato introducido fuera del rango");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido incorrecto");
 				sc.nextLine();
@@ -62,13 +68,16 @@ public class Ejercicio01 {
 			try {
 				System.out.println("Inserta los segundos (0 a 59)");
 				segundos = sc.nextInt();
+				if (segundos < 0 || segundos > 59) {
+					System.out.println("Dato introducido fuera del rango");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido incorrecto");
 				sc.nextLine();
 			}
 
 		} while (segundos < 0 || segundos > 59);
-		
+
 		try {
 			System.out.println("¿Cuantos segundos vas a querer incrementar?");
 			incremento = sc.nextInt();

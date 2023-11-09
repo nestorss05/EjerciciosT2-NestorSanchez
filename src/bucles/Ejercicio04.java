@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * numeroA: 8 | numeroB: 12 | Esperaba: MCD = 4 | Resultado: MCD = 4
  * 
- * numeroA: -8 | numeroB: 12 | Esperaba: MCD = Sin Respuesta | Resultado: MCD = Sin Respuesta
+ * numeroA: -8 | numeroB: 12 | Esperaba: Menor que 1 | Resultado: Menor que 1
  * 
  */
 
@@ -39,6 +39,9 @@ public class Ejercicio04 {
 			try {
 				System.out.println("Inserta un numero");
 				numeroA = sc.nextInt();
+				if (numeroA < 1) {
+					System.out.println("Dato introducido menor que 1");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido invalido");
 				sc.nextLine();

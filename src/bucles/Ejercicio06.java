@@ -20,9 +20,9 @@ import java.util.Scanner;
  *              4444          4444
  *              55555         55555
  * 
- * numero: -11 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * numero: -11 | Esperaba: Fuera del rango | Resultado: Fuera del rango
  * 
- * numero: 21 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * numero: 21 | Esperaba: Fuera del rango | Resultado: Fuera del rango
  * 
  * numero: aea | Esperaba: Dato introducido invalido | Resultado: Dato introducido invalido
  * 
@@ -40,11 +40,15 @@ public class Ejercicio06 {
 		// Inicia el Scanner
 		Scanner sc = new Scanner(System.in);
 
+		// Pide al usuario un numero. Si el numero es entre 0 y 20, podra pasar
 		do {
 
 			try {
 				System.out.println("Inserta un numero");
 				numero = sc.nextInt();
+				if (numero < 0 || numero > 20) {
+					System.out.println("Dato introducido fuera del rango");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido invalido");
 				sc.nextLine();

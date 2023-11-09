@@ -20,7 +20,7 @@ import java.util.Scanner;
  *              1234321        1234321
  *              123454321      123454321
  * 
- * numero: -11 | Esperaba: Sin Respuesta | Resultado: Sin Respuesta
+ * numero: -11 | Esperaba: Menor que 1 | Resultado: Menor que 1
  * 
  * numero: aaa | Esperaba: Dato introducido invalido | Resultado: Dato introducido invalido
  * 
@@ -41,6 +41,9 @@ public class Ejercicio07 {
 			try {
 				System.out.println("Inserta un numero");
 				numero = sc.nextInt();
+				if (numero < 1) {
+					System.out.println("Dato introducido menor que 1");
+				}
 			} catch (InputMismatchException e) {
 				System.out.println("Dato introducido invalido");
 				sc.nextLine();
