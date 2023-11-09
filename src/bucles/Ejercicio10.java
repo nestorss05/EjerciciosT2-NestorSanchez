@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 /*
  * 
- * numero: 22 | Esperaba: Capicua | Resultado: 
+ * numero: 22 | Esperaba: Capicua | Resultado: Capicua
  * 
- * numero: 355 | Esperaba: No capicua | Resultado: 
+ * numero: 355 | Esperaba: No capicua | Resultado: No capicua
  * 
  * numero: -5 | Esperaba: Menor que 0 | Resultado: Menor o igual que 0
  * 
@@ -21,6 +21,16 @@ public class Ejercicio10 {
 
 		// numero: numero introducido por el usuario
 		int numero = -1;
+
+		// cifras: 
+		int cifras;
+
+		// numeroInverso: 
+		int numeroInverso = 0;
+
+		// numeroAuxiliar: numero que hace preservar la variable numero, usandose para
+		// saber cada cifra
+		int numeroAuxiliar;
 
 		// Inicia el Scanner
 		Scanner sc = new Scanner(System.in);
@@ -40,8 +50,26 @@ public class Ejercicio10 {
 			}
 		} while (numero < 0); // Fin Do While
 
-		// Aqui deberia estar el resto del codigo
-		
+		// numeroAuxiliar pasara a tener el valor de numero
+		numeroAuxiliar = numero;
+
+		// While
+		while (numeroAuxiliar != 0) {
+			cifras = numeroAuxiliar % 10;
+			System.out.println("cifras: " + cifras);
+			numeroInverso = numeroInverso * 10 + cifras;
+			System.out.println("numero inverso: " + numeroInverso);
+			numeroAuxiliar = numeroAuxiliar / 10;
+			System.out.println("numero aux: " + numeroAuxiliar);
+		} // Fin While
+
+		// Muestra el resultado por pantalla
+		if (numero == numeroInverso) {
+			System.out.println("El numero es capicua");
+		} else {
+			System.out.println("El numero no es capicua");
+		} // Fin If-Else
+
 		// Cierra el Scanner
 		sc.close();
 
