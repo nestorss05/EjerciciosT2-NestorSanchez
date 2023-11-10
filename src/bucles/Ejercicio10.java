@@ -64,7 +64,6 @@ public class Ejercicio10 {
 			cifras = numeroAuxiliar % 10;
 			numeroInverso = numeroInverso * 10 + cifras;
 			numeroAuxiliar /= 10;
-
 		} // Fin While
 
 		// Muestra el resultado por pantalla
