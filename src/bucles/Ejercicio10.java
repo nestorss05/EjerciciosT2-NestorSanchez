@@ -22,14 +22,14 @@ public class Ejercicio10 {
 		// numero: numero introducido por el usuario
 		int numero = -1;
 
-		// cifras: 
+		// cifras: numero que corresponda cada cifra
 		int cifras;
 
-		// numeroInverso: 
+		// numeroInverso: numero al que se van acumulando las cifras de cada iteracion
 		int numeroInverso = 0;
 
 		// numeroAuxiliar: numero que hace preservar la variable numero, usandose para
-		// saber cada cifra
+		// saber cada cifra. Se ira quitando cada cifra poco a poco
 		int numeroAuxiliar;
 
 		// Inicia el Scanner
@@ -53,14 +53,18 @@ public class Ejercicio10 {
 		// numeroAuxiliar pasara a tener el valor de numero
 		numeroAuxiliar = numero;
 
-		// While
+		// While: mientras que numeroAuxiliar no sea 0...
+
+		// Las cifras sera el resto de numeroAuxiliar entre 10, para ir por cada cifra
+		// A numeroInverso se le sumara una cifra multiplicandolo por 10 y sumando la
+		// variable cifra a el, para que el resultado sea exacto y se vaya construyendo
+		// el numero final
+		// A numeroAuxiliar se le quitara una cifra dividiendolo entre 10
 		while (numeroAuxiliar != 0) {
 			cifras = numeroAuxiliar % 10;
-			System.out.println("cifras: " + cifras);
 			numeroInverso = numeroInverso * 10 + cifras;
-			System.out.println("numero inverso: " + numeroInverso);
-			numeroAuxiliar = numeroAuxiliar / 10;
-			System.out.println("numero aux: " + numeroAuxiliar);
+			numeroAuxiliar /= 10;
+
 		} // Fin While
 
 		// Muestra el resultado por pantalla
